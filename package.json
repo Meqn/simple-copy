@@ -1,0 +1,36 @@
+{
+  "name": "simple-copy",
+  "version": "1.0.0",
+  "description": "Simple, copy files & directories width glob",
+  "engines": {
+    "node": ">=10"
+  },
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mengqing723/simple-copy.git"
+  },
+  "keywords": [
+    "copy",
+    "file",
+    "fs",
+    "copyFile",
+    "glob",
+    "dirctory"
+  ],
+  "author": "lmq <mengqing723@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mengqing723/simple-copy/issues"
+  },
+  "homepage": "https://github.com/mengqing723/simple-copy#readme",
+  "devDependencies": {
+    "glob": "^7.1.3"
+  }
+}

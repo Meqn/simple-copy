@@ -1,3 +1,3 @@
-# cp-files
+# simple-copy
 
-copy files base on glob
+> Simple, copy files & directories width glob
