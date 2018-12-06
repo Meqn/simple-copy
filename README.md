@@ -31,6 +31,9 @@ copy('images/*.jpg', 'statics/img/')
 // copy files
 copy('images/*.jpg', file => `statics/${file}`)
 
+// copy directory
+copy('images/**', file => `statics/${file}`)
+
 ```
 
 
