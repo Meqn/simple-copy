@@ -24,16 +24,31 @@ yarn add -D simple-copy
 ```js
 const copy = require('simple-copy')
 
-// copy one file
+/**
+ * copy one file
+ */
 copy('images/banner.jpg', 'statics/img/bg.jpg')
 
-// copy files
-copy('images/*.jpg', 'statics/img/')
 
-// copy files
+/**
+ * copy files
+ */
+copy('images/*.jpg', 'statics/img/')
+// do not overwrite
+copy('images/*.jpg', 'statics/img/', 1)
+// overwrite
+copy('images/*.jpg', 'statics/img/', (error, files, index) => consoel.log(files[index]))
+
+
+/**
+ * copy files
+ */
 copy('images/*.jpg', file => `statics/${file}`)
 
-// copy directory
+
+/**
+ * copy directory
+ */
 copy('images/', file => `statics/${file}`)
 copy('images/**', file => `statics/${file}`)
 
@@ -41,22 +56,23 @@ copy('images/**', file => `statics/${file}`)
 
 
 
-## option
+## Options
 
 ```js
 const copy = require('simple-copy')
 
-/**
- * copy files or directory
- * 
- * @param {[string]} src 源文件
- * @param {[string]} dest 输出文件
- * @param {[number]} flag 是否覆盖: {0: 覆盖, 1: 不覆盖}
- * @param {[function]} cb 回调方法
- */
+
 copy(src, dest, flag, callback)
 ```
 
+### src
 
+- `src` `{String|Object|Array}` Pattern to be matched
+- `dest` `{String | Function}` Destination directory
+- `flag` `{Number}` flag or callback function. `{0 | 1}` or `{Function}`
+- `cb` `{Function}` Called when an error occurs, or matches are found
+  - `error` `{Error | null}`
+  - `matches` `{Array<String>}` filenames found matching the pattern
+  - `currentIndex` `{Number}` The index of the current matching file
 
 
