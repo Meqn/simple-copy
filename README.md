@@ -19,7 +19,9 @@ yarn add -D simple-copy
 
 ## Usage
 
-> ⚠️  directory required `/` 
+> ⚠️  Directory must end with `/` 
+
+eg. `/statics/images/`
 
 ```js
 const copy = require('simple-copy')
@@ -34,22 +36,17 @@ copy('images/banner.jpg', 'statics/img/bg.jpg')
  * copy files
  */
 copy('images/*.jpg', 'statics/img/')
-// do not overwrite
-copy('images/*.jpg', 'statics/img/', 1)
 // overwrite
-copy('images/*.jpg', 'statics/img/', (error, files, index) => consoel.log(files[index]))
+copy('images/**', 'statics/img/')
+// do not overwrite
+copy('images/**', 'statics/img/', { overwrite: false })
 
-
-/**
- * copy files
- */
-copy('images/*.jpg', file => `statics/${file}`)
 
 
 /**
  * copy directory
  */
-copy('images/', file => `statics/${file}`)
+copy('images/', file => `statics/${Date.now()}/${file}`)
 copy('images/**', file => `statics/${file}`)
 
 ```
@@ -59,20 +56,22 @@ copy('images/**', file => `statics/${file}`)
 ## Options
 
 ```js
-const copy = require('simple-copy')
-
-
-copy(src, dest, flag, callback)
+copy(srcPath, dstPath[, options, callback])
 ```
 
 ### src
 
 - `src` `{String|Object|Array}` Pattern to be matched
 - `dest` `{String | Function}` Destination directory
-- `flag` `{Number}` flag or callback function. `{0 | 1}` or `{Function}`
+- `Options` `{Object}` flag or callback function.
+  - `overwrite`  Overwrite existing files
+  - `depth` Recursive source directory
 - `cb` `{Function}` Called when an error occurs, or matches are found
   - `error` `{Error | null}`
   - `matches` `{Array<String>}` filenames found matching the pattern
   - `currentIndex` `{Number}` The index of the current matching file
+
+
+
 
 

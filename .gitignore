@@ -1,6 +1,13 @@
 
+launch.json
+
 node_modules/
 example/
 imgs/
+bin/
+
+Todo.md
 
 yarn.lock
+package-lock.json
+*error.log
