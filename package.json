@@ -9,6 +9,9 @@
   "directories": {
     "lib": "lib"
   },
+  "bin": {
+    "scopy": "bin/cli.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -30,7 +33,10 @@
     "url": "https://github.com/mengqing723/simple-copy/issues"
   },
   "homepage": "https://github.com/mengqing723/simple-copy#readme",
-  "devDependencies": {
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "commander": "^2.19.0",
+    "diy-log": "^1.0.0",
     "glob": "^7.1.3"
   }
 }
