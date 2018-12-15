@@ -26,6 +26,10 @@ eg. `/statics/images/`
 ```js
 const copy = require('simple-copy')
 
+// copy(srcPath, dstPath[, options, callback])
+
+
+
 /**
  * copy one file
  */
@@ -59,13 +63,11 @@ copy('images/**', file => `statics/${file}`)
 copy(srcPath, dstPath[, options, callback])
 ```
 
-### src
-
 - `src` `{String|Object|Array}` Pattern to be matched
 - `dest` `{String | Function}` Destination directory
 - `Options` `{Object}` flag or callback function.
-  - `overwrite`  Overwrite existing files
-  - `depth` Recursive source directory
+  - `overwrite` `{Boolean}`  Overwrite existing files
+  - `depth` `{Boolean}`  Recursive source directory
 - `cb` `{Function}` Called when an error occurs, or matches are found
   - `error` `{Error | null}`
   - `matches` `{Array<String>}` filenames found matching the pattern
