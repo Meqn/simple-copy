@@ -1,7 +1,7 @@
 {
   "name": "simple-copy",
   "version": "2.0.0",
-  "description": "Simple, copy files & directories width glob",
+  "description": "Simple copy-cli, copy files & directories width glob",
   "engines": {
     "node": ">=10"
   },
