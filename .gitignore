@@ -4,7 +4,6 @@ launch.json
 node_modules/
 example/
 imgs/
-bin/
 
 Todo.md
 
