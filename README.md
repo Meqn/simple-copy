@@ -1,6 +1,17 @@
 # simple-copy
 
-> Simple, copy files & directories width glob
+> Simple copy-cli, copy files & directories width glob
+
+
+
+## Table of Contents
+
+- [Installation](#Installation)
+- [Usage](#Usage)
+- [Options](#Options)
+- [CLI](#CLI)
+
+
 
 
 ## Installation
@@ -76,4 +87,45 @@ copy(srcPath, dstPath[, options, callback])
 
 
 
+## CLI
+
+
+```
+npm install --global simple-copy
+```
+
+or  
+
+```
+yarn add -g simple-copy
+```
+
+
+### CLI Useage
+
+```
+$ scopy <src> <dest> [...]
+
+$ scopy --help
+$ scopy -v
+```
+
+- `src`  Pattern to be matched
+- `dest`  Destination directory
+- `[options]`
+  - `-O` , `--no-overwrite`  Do not overwrite the destination 
+  - `-D` , `--no-depth`  Do not recursive source directory 
+
+
+
+### Example
+
+```bash
+# Clone media to statics
+$ scopy ./src/media/ ./dist/statics/
+
+# Copy the avatar image of the png to statics directory
+$ scopy imgs/avatar/*.png statics/ -D
+
+```
 
