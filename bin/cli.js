@@ -2,7 +2,7 @@
 
 const copy = require('../lib')
 const pkg = require('../package.json')
-const argv = process.argv.slice(2)
+// const argv = process.argv.slice(2)
 
 const program = require('commander')
 const chalk = require('chalk')
@@ -52,14 +52,20 @@ if (program.depth) {
   options.depth = true
 }
 
-if (!argv.length || argv.length === 1) {
+const args = program.args
+log.time(program.args)
+
+if (!args.length || args.length === 1) {
   program.outputHelp()
   process.exit(1)
 } else {
-  copy(argv[0], argv[1], options, (err, files, index) => {
-    if (err) {
+  const dest = args.pop()
+  const src = args.length === 1 ? args[0] : args
+  copy(src, dest, options, (err, files, index) => {
+    /* if (err) {
       process.exit(1)
-    } else {
+    }  */
+    if (!err) {
       const len = files.length
       if (len) {
         const progress = `${index + 1}/${len}`
