@@ -53,7 +53,6 @@ if (program.depth) {
 }
 
 const args = program.args
-log.time(program.args)
 
 if (!args.length || args.length === 1) {
   program.outputHelp()
@@ -73,7 +72,9 @@ if (!args.length || args.length === 1) {
 
         if (files.length - 1 === index) {
           setTimeout(() => {
-            log('😏  Copy task completed !  🍺 🍺 🍺')
+            log('-------------------------------------')
+            log('  😏  Copy task completed !  🍺 🍺 🍺')
+            log('-------------------------------------')
           }, 100)
         }
       } else {
