@@ -122,7 +122,9 @@ $ scopy -v
 
 ```bash
 # Clone media to statics
-$ scopy ./src/media/ ./dist/statics/
+$ scopy src/media/ dist/statics/
+
+$ scopy imgs/avatar.png imgs/*.jpg statics/
 
 # Copy the avatar image of the png to statics directory
 $ scopy imgs/avatar/*.png statics/ -D
